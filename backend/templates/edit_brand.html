@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Edit Brand</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div>
+                <!-- /.row -->
+              <!-- /.container-fluid -->
+                </div>
+                <div class="card-body">
+                    <form class="forms-sample" method="post" action="{% url 'Update_brand_fctn' dataid=data.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+
+                         <div class="form-group">
+                            <label for="exampleInputName1">Brand name</label>
+                            <input type="text" class="form-control" id="exampleInputName1" name="bd_name" placeholder="Name"  value="{{ data.add_ct_name }}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputDiscription">Discription</label>
+                            <input type="text" class="form-control" id="exampleInputDiscription" name="bd_discription" placeholder="Name"  value="{{ data.add_ct_dsc }}">
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label >File input</label>
+                            <input type="file" class="" name="ct_image"  value="{{ data.add_bd_profile }}">
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-primary mr-2">Update</button>
+                        <button class="btn btn-dark">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

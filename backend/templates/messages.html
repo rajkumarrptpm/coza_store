@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="table-responsive">
+    <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">New Messages</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+            <table class="table table" >
+                <thead >
+                    <tr>
+
+                        <th><center> Name </center></th>
+                        <th><center> Email</center></th>
+                        <th><center> Message</center></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                {% for d in data %}
+                    <tr>
+                        <td><center>{{ d.contact_name }}</center></td>
+                        <td><center>{{ d.contact_email }}</center></td>
+                        <td><center>{{ d.contact_message }}</center></td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+{% endblock %}

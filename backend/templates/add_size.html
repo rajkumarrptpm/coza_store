@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add category</title>
+    </head>
+    <body>
+        <div>
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Add Size</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <form class="forms-sample" method="post" action="{% url 'save_size_fctn' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+
+
+                        <div class="form-group">
+                            <label for="exampleInputName1">Size in letters</label>
+                            <input type="text" class="form-control" id="exampleInputName1" name="sz_letters" >
+                        </div>
+
+
+                         <div class="form-group">
+                            <label for="exampleInputName2">Size in number</label>
+                            <input type="text" class="form-control" id="exampleInputName2" name="sz_number">
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-dark">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

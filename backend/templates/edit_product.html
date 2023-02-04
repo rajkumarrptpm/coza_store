@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div>
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Edit Product</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard v1</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div>
+                <!-- /.row -->
+              <!-- /.container-fluid -->
+                </div>
+                <div class="card-body">
+                    <form class="forms-sample" method="post" action="{% url 'Update_product_fctn' dataid=data.id %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+
+                        <div class="form-group">
+                            <label for="inputStatus">Product category</label>
+                            <select id="inputStatus" class="form-control custom-select" name="pd_category" value="{{ data.add_pdt_category }}">
+                                <option>select</option>
+                                {% for d in data1 %}
+                                <option>{{ d.add_ct_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                         <div class="form-group">
+                            <label for="inputStatus1">Product Brand</label>
+                            <select id="inputStatus1" class="form-control custom-select" name="pd_brand" value="{{ data.add_pdt_brand }}">
+                                <option>select</option>
+                                {% for d in data3 %}
+                                <option>{{ d.add_bd_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputName1">Product Name</label>
+                            <input type="text" class="form-control" id="exampleInputName1" name="pd_name" placeholder="Name" value="{{data.add_pdt_name}}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputDiscription">Discription</label>
+                            <input type="text" class="form-control" id="exampleInputDiscription" name="pd_discription" placeholder="Name">
+                        </div>
+
+
+                         <div class="form-group">
+                            <label for="inputStatus2">Product Size</label>
+                            <select id="inputStatus2" class="form-control custom-select" name="pd_size">
+                                <option>select</option>
+                                {% for d in data2 %}
+                                <option>{{ d.size_ltr }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="exampleInputPrice">Price</label>
+                            <input type="text" class="form-control" id="exampleInputPrice" name="pd_price" placeholder="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label >File input 1</label>
+                            <input type="file" class="" name="pd_image_1" >
+                        </div>
+
+                        <div class="form-group">
+                            <label >File input 2</label>
+                            <input type="file" class="" name="pd_image_2" >
+                        </div>
+
+                        <div class="form-group">
+                            <label >File input 3</label>
+                            <input type="file" class="" name="pd_image_3" >
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary mr-2">Update</button>
+                        <button class="btn btn-dark">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

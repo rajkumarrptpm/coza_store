@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+    <div class="table-responsive">
+    <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Product Brand</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div>
+        <!-- /.row -->
+      <!-- /.container-fluid -->
+            </div>
+            <table class="table table" >
+                <thead >
+                    <tr>
+
+                        <th><center> brand Name </center></th>
+                        <th><center> Details</center></th>
+                        <th><center> Image </center></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                {% for d in data %}
+                    <tr>
+                        <td><center>{{ d.add_bd_name }}</center></td>
+                        <td><center>{{ d.add_bd_dsc }}</center></td>
+                        <td><center>
+                            <img src="{{ d.add_bd_profile.url }}" style="width:50px; height:50px;" class="img-circle elevation-2">
+                        </center></td>
+
+                        <td><center><form action="{% url 'edit_brand_fctn' dataid=d.id %}">
+                            {% csrf_token %}
+
+                            <button type="submit" class="btn btn-block bg-gradient-secondary btn-sm" style="width:70px;">Edit</button>
+                        </form></center></td>
+                        <td><form action="{% url 'delete_brand_fctn' dataid=d.id %}">
+                            <button type="submit" class="btn btn-block bg-gradient-secondary btn-sm" style="width:70px;">delete</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

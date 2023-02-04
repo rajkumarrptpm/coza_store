@@ -1,0 +1,354 @@
+@font-face {
+  font-family: "Apercu Bold";
+  src: url("/fonts/Apercu-Bold.woff2") format("woff2"),
+       url("/fonts/Apercu-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Apercu";
+  src: url("/fonts/Apercu-Regular.woff2") format("woff2"),
+       url("/fonts/Apercu-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "WiredMono";
+  src: url("/fonts/WiredMono-Regular.woff2") format("woff2"),
+       url("/fonts/WiredMono-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "WiredMonoBold";
+  src: url("/fonts/WiredMono-Bold.woff") format("woff2"),
+       url("/fonts/WiredMono-Bold.woff") format("woff");
+}
+
+:root {
+  --font-family-primary: "Apercu", sans-serif;
+  --font-family-secondary: "Apercu", sans-serif;
+
+  --palette-primary-main: rgb(10, 88, 149);
+  --palette-primary-link-hover: rgb(5, 125, 188);
+  --palette-text-500: rgb(24, 24, 24);
+
+  --font-size-1: 0.5rem;
+  --font-size-2: 0.75rem;
+  --font-size-3: 0.875rem;
+  --font-size-4: 1rem;
+  --font-size-5: 1.125rem;
+  --font-size-6: 1.25rem;
+  --font-size-7: 1.5rem;
+  --font-size-8: 1.75rem;
+  --font-size-9: 2rem;
+}
+
+.coral-tabBar {
+  border-bottom-width: 0px;
+}
+
+.coral-tabBar-tab.coral-tabBar-tab-active {
+  font-family: "WiredMonoBold";
+  font-size: var(--font-size-4);
+  /* font-weight: 500; */
+  text-decoration: none;
+
+  border-width: 0px;
+
+  color: var(--palette-text-500);
+}
+
+.coral-tabBar-tab.coral-tabBar-tab-active::before {
+  display: hidden;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+}
+
+.coral-tabBar-tab {
+  font-family: "WiredMono";
+  font-size: var(--font-size-4);
+  /* font-weight: 400; */
+  text-transform: uppercase;
+  text-decoration: underline;
+
+  border-width: 0px;
+
+  color: var(--palette-text-500);
+
+  background-color: white;
+
+  padding-left: 0px;
+  padding-right: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+}
+
+.coral-tabBar-tab:hover {
+  color: var(--palette-primary-link-hover);
+  text-decoration: none;
+}
+
+.coral-viewerBox {
+  display: flex;
+  align-items: center;
+  font-family: "Apercu Bold";
+}
+
+.coral-createComment-signIn{
+  font-family: "Apercu Bold";
+}
+
+.coral-viewerBox button,.coral-streamFooter button, .coral-createComment-signIn{
+  font-size: var(--font-size-2);
+  font-family: "Apercu Bold";
+  text-transform: capitalize;
+}
+
+.coral-viewerBox > div {
+  font-size: var(--font-size-4);
+  color: black;
+  font-weight: 400;
+
+  margin-right: var(--spacing-1);
+}
+
+[class^="UserBoxAuthenticated-text-"] {
+  font-size: var(--font-size-4);
+  color: black;
+  font-weight: 400;
+
+  margin-left: var(--spacing-2);
+}
+
+.coral-viewerBox-logoutButton {
+  text-decoration: none;
+
+  font-size: var(--font-size-4);
+  color: black;
+  font-weight: 400;
+}
+
+.coral-guidelines {
+  background-color: rgb(247, 247, 247);
+
+  border-radius: 0px;
+
+  padding: var(--spacing-5);
+}
+
+.coral-createComment-message {
+  background-color: black;
+  border-radius: 0px;
+}
+
+.coral-createComment-message > div {
+  font-size: var(--font-size-4);
+}
+
+.coral-createComment-message > i {
+  font-size: var(--font-size-5);
+  width: var(--font-size-5);
+}
+
+.coral-rte-toolbar {
+  border-radius: 0px;
+}
+
+.coral-commentForm {
+  border-radius: 0px;
+}
+
+.coral-tabBarSecondary-tab {
+  margin-bottom: -1px;
+
+  border-width: 0px;
+
+  padding-left: var(--spacing-5);
+  padding-right: var(--spacing-5);
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+
+  font-size: var(--font-size-4);
+  font-family: "Apercu Bold";
+
+  color: black;
+}
+
+.coral-tabBarSecondary-tab.coral-tabBarSecondary-tab-active {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--palette-grey-300);
+
+  border-bottom-width: 0px;
+
+  background-color: white;
+
+  padding-left: var(--spacing-5);
+  padding-right: var(--spacing-5);
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-4);
+
+  color: black;
+}
+
+.coral-counter {
+  display: none;
+  width: 0px;
+}
+
+.coral-tabBarComments-featuredTooltip {
+  display: none;
+  width: 0px;
+}
+
+[class^="SortMenu-label-"] {
+  font-size: var(--font-size-1);
+  color: var(--palette-grey-500);
+}
+
+[class^="SelectField-select-"] {
+  color: var(--palette-grey-500);
+}
+
+.coral-guidelines a {
+  color: #000;
+}
+
+.coral-guidelines blockquote {
+  float: left;
+  margin: 0;
+  background-color: #e1e1e1;
+  color: #5b5b5b;
+  width: 150px;
+  text-transform: uppercase;
+  margin-right: 16px;
+}
+
+#tab-ACCOUNT {
+  display: none;
+}
+
+.coral-featuredComment {
+  background: transparent;
+  border: 0;
+}
+
+.coral-comment-featuredTag {
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--palette-text-primary) !important;
+}
+
+.coral-featuredComment:before {
+  content: "Editor Pick";
+  font-family: var(--font-family-sans-serif);
+  background: url("/images/wired_badge.png");
+  padding-left: 18px;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-position-top: 3px;
+  margin-right: 0;
+  float: right;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+
+.coral-featuredComment-authorBar {
+  margin-top: 8px !important;
+}
+
+.coral-featuredComments .coral-featuredComment {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.coral-featuredComment-replies-divider {
+  display: none;
+}
+
+.coral-indent-1 {
+  margin-left: calc(var(--mini-unit) + 0 * var(--mini-unit));
+}
+
+.coral-indent-2 {
+  margin-left: calc(var(--mini-unit) + 1 * var(--mini-unit));
+}
+
+.coral-indent-3 {
+  margin-left: calc(var(--mini-unit) + 2 * var(--mini-unit));
+}
+
+.coral-indent-4 {
+  margin-left: calc(var(--mini-unit) + 3 * var(--mini-unit));
+}
+
+.coral-indent-1,
+.coral-indent-2,
+.coral-indent-3,
+.coral-indent-4 {
+  margin-top: calc(2 * var(--mini-unit));
+  border-color: #c4c4c4;
+}
+
+.coral-reactButton,
+.coral-featuredComment-replies,
+.coral-comment-shareButton,
+.coral-comment-reportButton,
+.coral-featuredComment-goToConversationButton,
+.coral-comment-replyButton {
+  color: var(--palette-primary-main);
+  margin-right: 0;
+  padding-right: 4px;
+  padding-left: 4px;
+  font-weight: normal;
+}
+
+.coral-reactButton {
+  padding-left: 0;
+}
+
+.coral-reactButton i,
+.coral-comment-shareButton i,
+.coral-featuredComment-replies i,
+.coral-comment-reportButton i,
+.coral-comment-replyButton i {
+  display: none;
+}
+
+.coral.coral-replyList-showAllButton {
+  color: #747474;
+  border-color: #747474;
+}
+
+.coral-createReplyComment-replyTo {
+  border-color: #d3d3d3;
+}
+
+.coral-myComment-viewConversationButton {
+  text-decoration: none;
+}
+
+.coral-featuredComment {
+  background-color: rgb(247, 247, 247);
+  border-left: 4px solid var(--palette-grey-400);
+}
+
+.coral-userTag, .coral-commentTag {
+  font-family: "WiredMono";
+  background-color: var(--palette-text-500);
+  font-size: var(--font-size-1);
+  border-radius: 5px;
+  padding: 2px 7px;
+  margin-top: 4px;  
+}
+
+.coral-myComment-reactions i {
+  display: none;
+}
+
+.coral-verifyEmail {
+  padding-left: 12px;
+}
+
+.coral-verifyEmail i {
+  display: none;
+}
